@@ -1,0 +1,7 @@
+# Reverse proxy with automatic HTTPS. The domain comes from $DOMAIN (.env).
+# Caddy obtains and renews a Let's Encrypt certificate on its own; it also
+# redirects http:// -> https:// automatically.
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy api:32950
+}

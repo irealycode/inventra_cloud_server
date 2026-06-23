@@ -26,8 +26,28 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       JWT_EXPIRE_MINUTES: ${JWT_EXPIRE_MINUTES:-720}
       SETUP_TOKEN_TTL_HOURS: ${SETUP_TOKEN_TTL_HOURS:-72}
+    # Bound to localhost only — public traffic comes in through Caddy (TLS).
+    # Keeps host-local tools (smoke_test.py, inventra_admin.py) working.
     ports:
-      - "32950:32950"
+      - "127.0.0.1:32950:32950"
+
+  # Reverse proxy + automatic HTTPS (Let's Encrypt). Set DOMAIN in .env.
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      DOMAIN: ${DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
 
 volumes:
   pgdata:
+  caddy_data:
+  caddy_config:
