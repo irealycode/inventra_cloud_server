@@ -1,0 +1,143 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "prev": "Prev",
+    "next": "Next",
+    "pagination": "{{from}}–{{to}} of {{total}}",
+    "from": "From",
+    "to": "To",
+    "search": "Search",
+    "allStores": "All stores",
+    "store": "Store",
+    "none": "—",
+    "out": "Out",
+    "open": "Open",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "nav": {
+    "brand": "Inventra",
+    "brandSub": "Stores HQ",
+    "viewing": "Viewing",
+    "dashboard": "Dashboard",
+    "sales": "Sales",
+    "products": "Products",
+    "movements": "Stock movements",
+    "clients": "Clients",
+    "shifts": "Shifts",
+    "management": "Management",
+    "expenses": "Expenses",
+    "staff": "Staff",
+    "signOut": "Sign out",
+    "owner": "Owner",
+    "consolidatedView": "Consolidated view ·"
+  },
+  "cols": {
+    "date": "Date",
+    "store": "Store",
+    "cashier": "Cashier",
+    "payment": "Payment",
+    "total": "Total",
+    "sale": "Sale",
+    "product": "Product",
+    "sku": "SKU",
+    "category": "Category",
+    "price": "Price",
+    "stock": "Stock",
+    "change": "Change",
+    "reason": "Reason",
+    "note": "Note",
+    "description": "Description",
+    "amount": "Amount",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "loyalty": "Loyalty",
+    "username": "Username",
+    "role": "Role",
+    "status": "Status",
+    "opened": "Opened",
+    "opening": "Opening",
+    "closing": "Closing",
+    "closed": "Closed"
+  },
+  "login": {
+    "welcomeBack": "Welcome back",
+    "subtitle": "Sign in to view every store in one dashboard.",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "failed": "Sign in failed",
+    "footnote": "Inventra · Consolidated reporting",
+    "tagline": "Every store. One dashboard.",
+    "by": "By"
+  },
+  "dashboard": {
+    "greetingMorning": "Good morning",
+    "greetingAfternoon": "Good afternoon",
+    "greetingEvening": "Good evening",
+    "greeting": "{{greeting}}, {{name}}",
+    "summary": "{{revenue}} across {{sales}} sales in this period.",
+    "noSales": "No sales recorded in this period yet.",
+    "statRevenue": "Revenue",
+    "statSales": "Sales",
+    "statExpenses": "Expenses",
+    "statProducts": "Products",
+    "statClients": "Clients",
+    "statStaff": "Staff",
+    "statStores": "Stores in view",
+    "statNet": "Net (rev − exp)",
+    "revenueByStore": "Revenue by store",
+    "noSalesRange": "No sales in this range yet."
+  },
+  "sales": {
+    "title": "Sales",
+    "subtitle": "Completed sales synced from your stores.",
+    "empty": "No sales in this range."
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Catalogue synced from your stores.",
+    "searchPlaceholder": "Search name, SKU, barcode…",
+    "empty": "No products found."
+  },
+  "movements": {
+    "title": "Stock movements",
+    "subtitle": "Every stock change synced from your stores.",
+    "empty": "No stock movements."
+  },
+  "expenses": {
+    "title": "Expenses",
+    "subtitle": "{{amount}} total in this range.",
+    "empty": "No expenses in this range."
+  },
+  "clients": {
+    "title": "Clients",
+    "subtitle": "Customer book synced from your stores.",
+    "searchPlaceholder": "Search name, phone, email…",
+    "empty": "No clients found."
+  },
+  "staff": {
+    "title": "Staff",
+    "subtitle": "Employees synced from your stores.",
+    "empty": "No staff found."
+  },
+  "shifts": {
+    "title": "Shifts",
+    "subtitle": "Cash-drawer shifts synced from your stores.",
+    "empty": "No shifts."
+  },
+  "setPassword": {
+    "title": "Choose your password",
+    "missingToken": "This link is missing its setup token. Please use the link your provider sent you.",
+    "subtitle": "Set a password to access your stores dashboard.",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "tooShort": "At least 8 characters.",
+    "mismatch": "Passwords don't match.",
+    "submit": "Set password & continue",
+    "error": "Could not set password"
+  }
+}

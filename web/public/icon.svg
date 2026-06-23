@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-453.5373 3111.8632 165.0744 165.0744" width="165.074px" height="165.074px" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient id="gradient-1-0" href="#gradient-1" gradientUnits="userSpaceOnUse" x1="-371" y1="3111.9" x2="-371" y2="3276.9"/>
+    <linearGradient id="gradient-1" bx:pinned="true">
+      <stop offset="0" style="stop-color: rgb(12, 11, 14);"/>
+      <stop offset="0.997" style="stop-color: rgb(13, 3, 32);"/>
+    </linearGradient>
+  </defs>
+  <g style="transform-origin: -371px 3194.4px;" transform="matrix(-1, 0.000451, -0.000451, -1, -0.000023, -0.00062671)">
+    <title>Icon</title>
+    <path d="M -419.13 3111.9 L -322.87 3111.9 C -303.89 3111.9 -288.5 3127.29 -288.5 3146.27 L -288.5 3242.52 C -288.5 3261.51 -303.89 3276.9 -322.87 3276.9 L -419.13 3276.9 C -438.11 3276.9 -453.5 3261.51 -453.5 3242.52 L -453.5 3146.27 C -453.5 3127.29 -438.11 3111.9 -419.13 3111.9 Z" style="stroke-linejoin: round; stroke-width: 50px; stroke-linecap: round; fill: url(&quot;#gradient-1-0&quot;);"/>
+    <rect x="643.978" y="152.529" width="14" height="89.191" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); stroke-width: 0;" transform="matrix(-1, -0.000451, 0.434778, -0.999804, 163.18662, 3390.727152)"/>
+    <rect x="-629.57" y="-152.53" width="13.687" height="89.191" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); stroke-width: 0; transform-origin: 515.744px -107.932px;" transform="matrix(1, 0.000451, -0.429047, -1.000194, 259.322745, 3301.81309)"/>
+    <rect x="-561.91" y="-152.53" width="12.216" height="89.191" style="stroke: rgb(0, 0, 0); stroke-width: 0; fill: rgba(255, 255, 255, 0.647); transform-origin: 460.322px -107.932px;" transform="matrix(1, 0.000451, -0.429047, -1.000194, 210.001738, 3301.599801)"/>
+    <rect x="542.181" y="152.53" width="11.787" height="89.191" style="stroke: rgb(0, 0, 0); stroke-width: 0; fill: rgba(255, 255, 255, 0.21); transform-origin: 1528.52px 197.128px;" transform="matrix(1, 0.000451, -0.429047, -1.000194, -877.356035, 2996.534773)"/>
+  </g>
+</svg>

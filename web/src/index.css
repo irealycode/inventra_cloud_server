@@ -1,0 +1,102 @@
+/* Bundled webfonts — same families as the desktop app (Inter body, Anek Tamil
+ * display) so the console reads as the same product. */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/anek-tamil";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: theme("colors.ink.50");
+  color: theme("colors.ink.800");
+  font-family: "Inter Variable", Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium
+      transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  }
+  .btn-primary {
+    @apply btn text-white;
+    background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%);
+    box-shadow:
+      0 6px 16px -6px rgba(79, 70, 229, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  .btn-primary:hover:not(:disabled) {
+    filter: brightness(1.06);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    @apply btn bg-white text-ink-800 border border-ink-200 hover:border-ink-300 hover:bg-ink-50;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-ink-700 hover:bg-ink-100;
+  }
+
+  .field {
+    @apply w-full bg-white text-ink-900 placeholder:text-ink-400 text-sm rounded-lg
+      border border-ink-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20
+      px-3 py-2 outline-none transition;
+  }
+  .label {
+    @apply text-xs font-medium uppercase tracking-wide text-ink-500 mb-1.5 block;
+  }
+  .page-title {
+    @apply font-display text-2xl font-semibold tracking-tight text-ink-900;
+  }
+  .card {
+    @apply bg-white border border-ink-200 rounded-xl shadow-card;
+  }
+  .table-row {
+    @apply border-b border-ink-100 last:border-0 hover:bg-ink-50/60 transition-colors;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full;
+  }
+  .chip-low {
+    @apply chip bg-amber-50 text-amber-700 border border-amber-200;
+  }
+  .chip-out {
+    @apply chip bg-red-50 text-red-700 border border-red-200;
+  }
+  .chip-ok {
+    @apply chip bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+  .chip-info {
+    @apply chip bg-accent-50 text-accent-700 border border-accent-100;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.18);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

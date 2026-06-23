@@ -1,0 +1,143 @@
+{
+  "common": {
+    "loading": "Chargement…",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "pagination": "{{from}}–{{to}} sur {{total}}",
+    "from": "Du",
+    "to": "Au",
+    "search": "Rechercher",
+    "allStores": "Tous les magasins",
+    "store": "Magasin",
+    "none": "—",
+    "out": "Rupture",
+    "open": "Ouvert",
+    "active": "Actif",
+    "inactive": "Inactif"
+  },
+  "nav": {
+    "brand": "Inventra",
+    "brandSub": "Siège magasins",
+    "viewing": "Affichage",
+    "dashboard": "Tableau de bord",
+    "sales": "Ventes",
+    "products": "Produits",
+    "movements": "Mouvements de stock",
+    "clients": "Clients",
+    "shifts": "Sessions de caisse",
+    "management": "Gestion",
+    "expenses": "Dépenses",
+    "staff": "Personnel",
+    "signOut": "Déconnexion",
+    "owner": "Propriétaire",
+    "consolidatedView": "Vue consolidée ·"
+  },
+  "cols": {
+    "date": "Date",
+    "store": "Magasin",
+    "cashier": "Caissier",
+    "payment": "Paiement",
+    "total": "Total",
+    "sale": "Vente",
+    "product": "Produit",
+    "sku": "SKU",
+    "category": "Catégorie",
+    "price": "Prix",
+    "stock": "Stock",
+    "change": "Variation",
+    "reason": "Motif",
+    "note": "Note",
+    "description": "Description",
+    "amount": "Montant",
+    "name": "Nom",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "loyalty": "Fidélité",
+    "username": "Identifiant",
+    "role": "Rôle",
+    "status": "Statut",
+    "opened": "Ouverte",
+    "opening": "Ouverture",
+    "closing": "Clôture",
+    "closed": "Fermée"
+  },
+  "login": {
+    "welcomeBack": "Bon retour",
+    "subtitle": "Connectez-vous pour voir tous vos magasins en un tableau de bord.",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@entreprise.com",
+    "password": "Mot de passe",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion…",
+    "failed": "Échec de la connexion",
+    "footnote": "Inventra · Rapports consolidés",
+    "tagline": "Tous vos magasins. Un seul tableau de bord.",
+    "by": "Par"
+  },
+  "dashboard": {
+    "greetingMorning": "Bonjour",
+    "greetingAfternoon": "Bon après-midi",
+    "greetingEvening": "Bonsoir",
+    "greeting": "{{greeting}}, {{name}}",
+    "summary": "{{revenue}} sur {{sales}} ventes pour cette période.",
+    "noSales": "Aucune vente enregistrée pour cette période.",
+    "statRevenue": "Chiffre d'affaires",
+    "statSales": "Ventes",
+    "statExpenses": "Dépenses",
+    "statProducts": "Produits",
+    "statClients": "Clients",
+    "statStaff": "Personnel",
+    "statStores": "Magasins affichés",
+    "statNet": "Net (CA − dép.)",
+    "revenueByStore": "Chiffre d'affaires par magasin",
+    "noSalesRange": "Aucune vente sur cette période."
+  },
+  "sales": {
+    "title": "Ventes",
+    "subtitle": "Ventes finalisées synchronisées depuis vos magasins.",
+    "empty": "Aucune vente sur cette période."
+  },
+  "products": {
+    "title": "Produits",
+    "subtitle": "Catalogue synchronisé depuis vos magasins.",
+    "searchPlaceholder": "Rechercher nom, SKU, code-barres…",
+    "empty": "Aucun produit trouvé."
+  },
+  "movements": {
+    "title": "Mouvements de stock",
+    "subtitle": "Chaque variation de stock synchronisée depuis vos magasins.",
+    "empty": "Aucun mouvement de stock."
+  },
+  "expenses": {
+    "title": "Dépenses",
+    "subtitle": "{{amount}} au total sur cette période.",
+    "empty": "Aucune dépense sur cette période."
+  },
+  "clients": {
+    "title": "Clients",
+    "subtitle": "Fichier clients synchronisé depuis vos magasins.",
+    "searchPlaceholder": "Rechercher nom, téléphone, e-mail…",
+    "empty": "Aucun client trouvé."
+  },
+  "staff": {
+    "title": "Personnel",
+    "subtitle": "Employés synchronisés depuis vos magasins.",
+    "empty": "Aucun employé trouvé."
+  },
+  "shifts": {
+    "title": "Sessions de caisse",
+    "subtitle": "Sessions de caisse synchronisées depuis vos magasins.",
+    "empty": "Aucune session."
+  },
+  "setPassword": {
+    "title": "Choisissez votre mot de passe",
+    "missingToken": "Ce lien n'a pas de jeton de configuration. Veuillez utiliser le lien envoyé par votre fournisseur.",
+    "subtitle": "Définissez un mot de passe pour accéder à votre tableau de bord.",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "tooShort": "Au moins 8 caractères.",
+    "mismatch": "Les mots de passe ne correspondent pas.",
+    "submit": "Définir le mot de passe & continuer",
+    "error": "Impossible de définir le mot de passe"
+  }
+}

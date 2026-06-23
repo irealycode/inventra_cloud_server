@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-182.16 -49.098 1500.14 222.855" width="1500.14px" height="222.855px">
+  <rect x="-182.16" y="-49.098" width="1500.14" height="222.855" style="stroke-width: 0px; stroke: rgba(0, 0, 0, 0); fill: rgba(216, 216, 216, 0);" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+  <g fill="none" stroke="white" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -251.95899188396265, -72.35579134094075)">
+    <line x1="80" y1="60" x2="80" y2="191.842" style="stroke-width: 10px;"/>
+    <path d="M 180 191.842 L 180 90 L 290 90 L 310 110 L 310 191.842" style="stroke-width: 10px;"/>
+    <path d="M 420 90 L 490 191.842 L 560 90" style="stroke-width: 10px;"/>
+    <line x1="650" y1="95" x2="760" y2="95" style="stroke-width: 10px;"/>
+    <line x1="649.801" y1="140.012" x2="759.801" y2="140.012" style="stroke-width: 10px;"/>
+    <line x1="650" y1="186.842" x2="760" y2="186.842" style="stroke-width: 10px;"/>
+    <path d="M 850 191.842 L 850 90 L 960 90 L 980 110 L 980 191.842" style="stroke-width: 10px;"/>
+    <line x1="1080.866" y1="33.285" x2="1077.439" y2="239.429" style="stroke-width: 10px;"/>
+    <line x1="1080" y1="95" x2="1160" y2="95" style="stroke-width: 10px;"/>
+    <path d="M 1260 191.842 L 1260 110 L 1290 90 L 1380 90" style="stroke-width: 10px;"/>
+    <g fill="none" stroke="white" stroke-width="6">
+      <line x1="1460" y1="90" x2="1540" y2="90" style="stroke-width: 10px;"/>
+      <line x1="1546.523" y1="92.751" x2="1557.409" y2="103.637" style="stroke-width: 10px;"/>
+      <line x1="1560" y1="110" x2="1560" y2="191.842" style="stroke-width: 10px;"/>
+      <line x1="1464.255" y1="128.355" x2="1559.379" y2="129.327" style="stroke-width: 10px;"/>
+      <line x1="1457.976" y1="130.979" x2="1442.814" y2="146.297" style="stroke-width: 10px;"/>
+      <line x1="1440.151" y1="152.823" x2="1440.389" y2="192.702" style="stroke-width: 10px;"/>
+    </g>
+  </g>
+  <g fill="none" stroke="white" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -251.95899188396265, -72.35579134094075)">
+    <line x1="650" y1="95" x2="760" y2="95" style="stroke-width: 10px;"/>
+    <line x1="649.801" y1="140.012" x2="759.801" y2="140.012" style="stroke-width: 10px;"/>
+    <line x1="650" y1="186.842" x2="760" y2="186.842" style="stroke-width: 10px;"/>
+  </g>
+</svg>
