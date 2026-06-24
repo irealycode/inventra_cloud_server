@@ -28,6 +28,7 @@
     "management": "Management",
     "expenses": "Expenses",
     "staff": "Staff",
+    "stores": "Stores",
     "signOut": "Sign out",
     "owner": "Owner",
     "consolidatedView": "Consolidated view ·"
@@ -128,6 +129,21 @@
     "title": "Shifts",
     "subtitle": "Cash-drawer shifts synced from your stores.",
     "empty": "No shifts."
+  },
+  "stores": {
+    "title": "Stores",
+    "subtitle": "Branches registered to your account. Removing one deletes its synced data and frees a seat.",
+    "empty": "No stores yet. Register a branch from its Inventra app (Settings → Multi-store).",
+    "name": "Store",
+    "lastSeen": "Last seen",
+    "status": "Status",
+    "actions": "Actions",
+    "never": "never",
+    "active": "Active",
+    "inactive": "Inactive",
+    "remove": "Remove",
+    "removeConfirm": "Remove “{{name}}” from HQ? This deletes its synced data and frees a seat. The branch can reconnect later.",
+    "removeFailed": "Couldn't remove the store"
   },
   "setPassword": {
     "title": "Choose your password",

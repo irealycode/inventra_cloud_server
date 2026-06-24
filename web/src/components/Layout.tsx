@@ -116,6 +116,9 @@ export default function Layout() {
             <Item to="/staff" icon={<Users className="w-4 h-4" />}>
               {t("nav.staff")}
             </Item>
+            <Item to="/stores" icon={<StoreIcon className="w-4 h-4" />}>
+              {t("nav.stores")}
+            </Item>
           </div>
         </nav>
 

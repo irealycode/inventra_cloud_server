@@ -13,6 +13,7 @@ import Expenses from "./pages/Expenses";
 import Clients from "./pages/Clients";
 import Staff from "./pages/Staff";
 import Shifts from "./pages/Shifts";
+import Stores from "./pages/Stores";
 
 export default function App() {
   const { t } = useTranslation();
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/shifts" element={<Shifts />} />
         <Route path="/expenses" element={<Expenses />} />
         <Route path="/staff" element={<Staff />} />
+        <Route path="/stores" element={<Stores />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

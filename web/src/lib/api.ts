@@ -186,6 +186,7 @@ export const api = {
     req<{ access_token: string }>("/api/v1/auth/set-password", { method: "POST", body: { token, password }, auth: false }),
   me: () => req<Me>("/api/v1/me"),
   stores: () => req<Store[]>("/api/v1/stores"),
+  deleteStore: (storeId: string) => req<void>(`/api/v1/stores/${storeId}`, { method: "DELETE" }),
 
   salesReport: (p: ListParams) =>
     req<SalesReport>(`/api/v1/reports/sales${qs({ store_id: p.storeId, from: p.from, to: p.to })}`),

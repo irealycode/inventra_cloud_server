@@ -28,6 +28,7 @@
     "management": "Gestion",
     "expenses": "Dépenses",
     "staff": "Personnel",
+    "stores": "Magasins",
     "signOut": "Déconnexion",
     "owner": "Propriétaire",
     "consolidatedView": "Vue consolidée ·"
@@ -128,6 +129,21 @@
     "title": "Sessions de caisse",
     "subtitle": "Sessions de caisse synchronisées depuis vos magasins.",
     "empty": "Aucune session."
+  },
+  "stores": {
+    "title": "Magasins",
+    "subtitle": "Succursales enregistrées sur votre compte. En supprimer une efface ses données synchronisées et libère une place.",
+    "empty": "Aucun magasin pour l'instant. Enregistrez une succursale depuis son application Inventra (Paramètres → Multi-magasin).",
+    "name": "Magasin",
+    "lastSeen": "Vu pour la dernière fois",
+    "status": "Statut",
+    "actions": "Actions",
+    "never": "jamais",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "remove": "Supprimer",
+    "removeConfirm": "Supprimer « {{name}} » de HQ ? Cela efface ses données synchronisées et libère une place. La succursale pourra se reconnecter plus tard.",
+    "removeFailed": "Impossible de supprimer le magasin"
   },
   "setPassword": {
     "title": "Choisissez votre mot de passe",
