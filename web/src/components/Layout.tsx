@@ -4,6 +4,7 @@ import {
   ChevronDown,
   History,
   LayoutDashboard,
+  LineChart,
   LogOut,
   Menu,
   Package,
@@ -92,6 +93,9 @@ export default function Layout() {
         <nav className="relative flex-1 p-2 pt-3 space-y-0.5 text-sm overflow-y-auto">
           <Item to="/" icon={<LayoutDashboard className="w-4 h-4" />} end>
             {t("nav.dashboard")}
+          </Item>
+          <Item to="/analytics" icon={<LineChart className="w-4 h-4" />}>
+            {t("nav.analytics")}
           </Item>
           <Item to="/sales" icon={<Receipt className="w-4 h-4" />}>
             {t("nav.sales")}

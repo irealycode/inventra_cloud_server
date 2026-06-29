@@ -132,6 +132,8 @@ class Product(_Synced, Base):
     stock = Column(Numeric, nullable=True)
     category = Column(String(128), nullable=True)
     active = Column(Integer, nullable=True)
+    unit = Column(String(16), nullable=True)  # display label: "kg", "g", "L", "unit"
+    sold_by_weight = Column(Integer, nullable=True)  # 1 if quantities may be fractional
     created_at = Column(String(40), nullable=True)
     updated_at = Column(String(40), nullable=True)
 
@@ -218,7 +220,7 @@ PROMOTED = {
                    "unit_price", "created_at"],
     "sale_payments": ["sale_local_id", "method", "amount", "created_at"],
     "products": ["name", "sku", "barcode", "price", "cost", "stock", "category",
-                 "active", "created_at", "updated_at"],
+                 "active", "unit", "sold_by_weight", "created_at", "updated_at"],
     "stock_movements": ["product_local_id", "delta", "reason", "note", "created_at"],
     "expenses": ["amount", "category", "note", "created_at"],
     "employees": ["username", "full_name", "role", "active", "created_at"],

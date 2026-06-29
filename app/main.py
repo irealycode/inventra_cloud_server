@@ -2,11 +2,22 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
+from sqlalchemy import text
 
 from app.db import Base, engine
 from app.routers import admin, auth, health, reports, stores, sync
 
 app = FastAPI(title="Inventra Cloud Server", version="0.1.0")
+
+# Additive column migrations for already-created tables. `create_all` only
+# creates missing *tables*, never new columns on existing ones, so promoted
+# columns added after a deployment need an explicit (idempotent) ALTER. Postgres
+# `ADD COLUMN IF NOT EXISTS` makes each safe to run on every boot. Swap the whole
+# lot for Alembic once the schema stabilizes (CONTEXT §12).
+_COLUMN_MIGRATIONS = (
+    "ALTER TABLE products ADD COLUMN IF NOT EXISTS unit VARCHAR(16)",
+    "ALTER TABLE products ADD COLUMN IF NOT EXISTS sold_by_weight INTEGER",
+)
 
 
 @app.on_event("startup")
@@ -14,6 +25,9 @@ def _init_db() -> None:
     # v1: create tables on boot. Swap for Alembic migrations once the schema
     # stabilizes (CONTEXT §12).
     Base.metadata.create_all(bind=engine)
+    with engine.begin() as conn:
+        for stmt in _COLUMN_MIGRATIONS:
+            conn.execute(text(stmt))
 
 
 app.include_router(health.router)

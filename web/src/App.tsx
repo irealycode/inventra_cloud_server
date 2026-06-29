@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Login from "./pages/Login";
 import SetPassword from "./pages/SetPassword";
 import Dashboard from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
 import Sales from "./pages/Sales";
 import Products from "./pages/Products";
 import Movements from "./pages/Movements";
@@ -39,6 +40,7 @@ export default function App() {
         }
       >
         <Route path="/" element={<Dashboard />} />
+        <Route path="/analytics" element={<Analytics />} />
         <Route path="/sales" element={<Sales />} />
         <Route path="/products" element={<Products />} />
         <Route path="/movements" element={<Movements />} />

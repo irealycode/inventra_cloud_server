@@ -196,6 +196,8 @@ Tables mirror the branch schema, scoped by `store_id`:
 - `GET /api/v1/stores` — the owner's stores + last-seen/health.
 - `GET /api/v1/reports/sales?from&to&store_id` — totals + per-store breakdown.
 - `GET /api/v1/reports/overview?from&to&store_id` — KPI counts (revenue, sales, expenses, products, clients, staff).
+- `GET /api/v1/reports/trends?from&to&store_id` — daily revenue + sales-count series, one per store (powers the Analytics line chart; `store_id` narrows to one line).
+- `GET /api/v1/reports/compare?from&to` — per-store KPI comparison (revenue, sales, avg ticket, units sold, expenses, net) + totals. Always all-stores.
 - `GET /api/v1/reports/sales-list?from&to&store_id&limit&offset` — individual sales (+cashier name).
 - `GET /api/v1/reports/products?search&store_id&limit&offset`
 - `GET /api/v1/reports/movements?store_id&limit&offset`
@@ -232,6 +234,41 @@ Tables mirror the branch schema, scoped by `store_id`:
 - **Phase 2 (master-down):** central catalog/pricing edited by the owner pushes
   *down* to branches. Schema/`updated_at` already accommodate this; the transport
   becomes bidirectional. Not built yet.
+
+### What is — and stays — synced (decisions, do not re-litigate)
+
+The synced set is fixed: `sales`, `sale_items`, `sale_payments`, `products`,
+`stock_movements`, `expenses`, `employees`, `clients`, `shifts`. Recent branch
+features were reviewed (see `NEW_UPDATE.md`) and these stay **edge-only / not
+synced**, same rationale as the existing refunds/suppliers/PO exclusions — the
+consolidated console reports on outcomes, not edge plumbing: `product_barcodes`,
+`documents`/`document_items` (quotes/invoices/BL), `promotions`,
+`supplier_returns`(+items), `inventory_sessions`/`inventory_counts`,
+`price_history`, `customer_ledger`, `tax_categories`. If cross-store catalog ever
+matters, it belongs in Phase-2 master-data-down, not v1 up-sync.
+
+- **Decimal / weight quantities are first-class.** Products can be sold by weight,
+  so `sale_items.quantity`, `stock_movements.delta`, and `products.stock` may be
+  fractional. The cloud already types these as `Numeric` and reports coerce
+  through `_f()` (float), so decimals need **zero cloud schema work**. The branch
+  serializer (`cloud_sync.rs`) reads them as `f64` (was `i64`, which threw
+  `InvalidColumnType` and stalled the whole push on the first weighed sale).
+- **Per-item price override needs zero cloud work** — it's just values in the
+  already-synced `sale_items.unit_price` / `line_total`.
+- **`products.unit` + `sold_by_weight` are promoted** so the console can render
+  "2.5 kg" instead of a bare "2.5" (additive boot migration in `main.py`; older
+  branches that don't send them just leave the columns NULL).
+- **Products paginate on a `(updated_at, id)` keyset, and one sync drains the
+  whole backlog.** The branch `updated_at` is only 1-second resolution, so a bulk
+  import gives thousands of rows the same timestamp; the old `updated_at > ts`
+  watermark stalled after the first 1000 (the rest tied on the boundary and never
+  passed `>`). `cloud_sync.rs` now keys on `(updated_at, id)` with a secondary
+  `cloud_cursor_products_id`, and `sync_once` loops until every watermark table
+  is drained (snapshots sent once). This is branch-side; the cloud is unaffected.
+- **Sale `status` / `client_local_id` are populated** from the branch's
+  `cancelled_at` / `customer_id`. **Known v1 gap:** `sales` rides an append-only
+  `id` watermark, so a sale cancelled *after* it was already pushed is not
+  re-sent — late cancellations need an `updated_at`-style watermark (Phase 2).
 
 ---
 
@@ -371,7 +408,12 @@ inventra-cloud-server/
    familiarity. A **store switcher** (All stores / a specific branch) scopes the
    whole console; pages: **Dashboard** (hero + KPI cards + revenue-by-store),
    **Sales**, **Products**, **Stock movements**, **Clients**, **Shifts**,
-   **Expenses**, **Staff** — each with a Store column in all-stores mode.
+   **Expenses**, **Staff** — each with a Store column in all-stores mode. An
+   **Analytics** page adds a multi-store revenue/sales **trend line chart**
+   (hand-rolled SVG, no chart-lib dependency; toggle metric, click the legend to
+   show/hide a store) over `/reports/trends`, plus a **store comparison table**
+   (revenue share, avg ticket, units, expenses, net, ranked) over
+   `/reports/compare`.
 6. **Phase 2** — master-data push-down, cross-store client dedup, two-way sync,
    stock transfers.
 

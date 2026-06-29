@@ -55,6 +55,43 @@ export interface Paged<T> {
   limit: number;
   offset: number;
 }
+export interface TrendSeries {
+  store_id: string;
+  store_name: string;
+  revenue: number[];
+  sales: number[];
+  total_revenue: number;
+}
+export interface Trends {
+  from: string | null;
+  to: string | null;
+  buckets: string[];
+  series: TrendSeries[];
+  totals: { revenue: number[]; sales: number[] };
+}
+export interface StoreCompareRow {
+  store_id: string;
+  store_name: string;
+  revenue: number;
+  sales_count: number;
+  avg_ticket: number;
+  units_sold: number;
+  expenses: number;
+  net: number;
+}
+export interface StoreCompare {
+  from: string | null;
+  to: string | null;
+  stores: StoreCompareRow[];
+  totals: {
+    revenue: number;
+    sales_count: number;
+    units_sold: number;
+    expenses: number;
+    net: number;
+    avg_ticket: number;
+  };
+}
 export interface SaleRow {
   store_id: string;
   store_name: string;
@@ -192,6 +229,10 @@ export const api = {
     req<SalesReport>(`/api/v1/reports/sales${qs({ store_id: p.storeId, from: p.from, to: p.to })}`),
   overview: (p: ListParams) =>
     req<Overview>(`/api/v1/reports/overview${qs({ store_id: p.storeId, from: p.from, to: p.to })}`),
+  trends: (p: ListParams) =>
+    req<Trends>(`/api/v1/reports/trends${qs({ store_id: p.storeId, from: p.from, to: p.to })}`),
+  compare: (p: ListParams) =>
+    req<StoreCompare>(`/api/v1/reports/compare${qs({ from: p.from, to: p.to })}`),
   salesList: (p: ListParams) =>
     req<Paged<SaleRow>>(
       `/api/v1/reports/sales-list${qs({ store_id: p.storeId, from: p.from, to: p.to, limit: p.limit, offset: p.offset })}`,
